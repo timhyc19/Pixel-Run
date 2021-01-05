@@ -12,11 +12,11 @@ screen.fill(WHITE)
 fontLoadingScreen = font.SysFont("Times New Roman",40)  #initialize font size for loading screen, and bigger text
 fontRegister = font.SysFont("Times New Roman",20) #font size for smaller text
 
-bossesPic = image.load("enemyBoss1.png")    #picture of my first avatar boss
-virusEnemyPic = image.load("virusEnemy.png")    #picture of my small virus tower enemy
-bulletFiringPic = transform.scale(image.load("bullets.png"),(30,30))    #bullet images for my player 
-enemyBulletFiringPic = transform.scale(image.load("enemyBullets.png"),(30,30))  #enemy bullet pictures (for the virus towers)
-bossBulletFiringPic = image.load("fireSpinner.png") #enemy bullet pictures (for the main boss enemy)
+bossesPic = image.load("images/enemyBoss1.png")    #picture of my first avatar boss
+virusEnemyPic = image.load("images/virusEnemy.png")    #picture of my small virus tower enemy
+bulletFiringPic = transform.scale(image.load("images/bullets.png"),(30,30))    #bullet images for my player 
+enemyBulletFiringPic = transform.scale(image.load("images/enemyBullets.png"),(30,30))  #enemy bullet pictures (for the virus towers)
+bossBulletFiringPic = image.load("images/fireSpinner.png") #enemy bullet pictures (for the main boss enemy)
 
 #defining a class for my bullets
 class playerBullet():
@@ -121,14 +121,14 @@ class bossBullet(): #create a class for boss bullets
     def draw(self): #initialize the drawing of the bullets
         screen.blit(bossBulletFiringPic, Rect(round(self.PosX),round(self.PosY),0,0)) #draw the enemy bullets on the screen
 
-magicPotionImage = transform.scale(image.load("manaPotion.png"),(80,70)) #image for each potion
+magicPotionImage = transform.scale(image.load("images/manaPotion.png"),(80,70)) #image for each potion
 def instructions(): #instruction page
     draw.rect(screen, WHITE, (280,150,500,500))
     draw.rect(screen, BLACK, (280,150,500,500),7)
     draw.rect(screen,BLACK,(740,150,40,40),2)           #draw dimensions of the box
     draw.line(screen, RED, (740,150),(780,190),3)
     draw.line(screen, RED, (780,150), (740,190),3)
-    wasdKeyboard = transform.scale(image.load("keyboard.png"),(100,70)) #image for keyboard --> this is where the image error in python shell shows up
+    wasdKeyboard = transform.scale(image.load("images/keyboard.png"),(100,70)) #image for keyboard --> this is where the image error in python shell shows up
     screen.blit(wasdKeyboard, Rect(310,180,10,10)) #display the keyboard image
     instructionText1 = fontLoadingScreen.render("Use WASD to move",5,BLACK) #instructions
     screen.blit(instructionText1,Rect(400,170,10,10))
@@ -264,20 +264,20 @@ flyingBrainHealth = 140
 
 enemyList.append(enemies()) #append enemies to the list
 enemyList.append(bosses()) #append bosses to the list
-shieldImage = transform.scale(image.load("shieldActivate.png"),(30,30))
-backgroundImage = transform.scale(image.load("backgroundGame.png"),(1000,1000))
-backgroundImage2 = transform.scale(image.load("introScreen.png"),(1000,1000))
-enemyBulletFiringPic = transform.scale(image.load("enemyBullets.png"),(30,30))
-turtle = transform.scale(image.load("turtle.png"), (120,120))
-portalEntry = transform.scale(image.load("portal.png"),(100,100))                   #most of my pixelated images
-entryText = fontLoadingScreen.render("Enter",5,BLACK)                               #some of the iamges are transformed/scaled
-craigTheHelper = image.load("helper.png")
-portalEntry2 = transform.scale(image.load("portal2.png"),(100,100))
-permafrostProtector = image.load("permafrost.png")
-flyingBrain = image.load("flyingBrain.png")
-rainClouds = image.load("rainClouds.png")
+shieldImage = transform.scale(image.load("images/shieldActivate.png"),(30,30))
+backgroundImage = transform.scale(image.load("images/backgroundGame.png"),(1000,1000))
+backgroundImage2 = transform.scale(image.load("images/introScreen.png"),(1000,1000))
+enemyBulletFiringPic = transform.scale(image.load("images/enemyBullets.png"),(30,30))
+turtle = transform.scale(image.load("images/turtle.png"), (120,120))
+portalEntry = transform.scale(image.load("images/portal.png"),(100,100))                   #most of my pixelated images
+entryText = fontLoadingScreen.render("images/Enter",5,BLACK)                               #some of the iamges are transformed/scaled
+craigTheHelper = image.load("images/helper.png")
+portalEntry2 = transform.scale(image.load("images/portal2.png"),(100,100))
+permafrostProtector = image.load("images/permafrost.png")
+flyingBrain = image.load("images/flyingBrain.png")
+rainClouds = image.load("images/rainClouds.png")
 
-textBox = transform.scale(image.load("pixelTextBox.png"),(200,200))
+textBox = transform.scale(image.load("images/pixelTextBox.png"),(200,200))
 craigWarning1 = fontRegister.render("Stay away",5,BLACK)            
 craigWarning2 = fontRegister.render("from the",5,BLACK)             #text of craigs warning
 craigWarning3 = fontRegister.render("portal",5,BLACK)
@@ -419,10 +419,10 @@ while running:      #check to see if running is true; if so,
                 countingMagicSeconds = 0    #set the timer back to 0
             
         if mouseX > 920 and mouseX < 970 and mouseY > 630 and mouseY < 700: #check if the mouse is in these coordinates; if it is,
-            craigTheHelper = image.load("helper2.png")  #set the image for craig the helper (red eyes)
+            craigTheHelper = image.load("images/helper2.png")  #set the image for craig the helper (red eyes)
             screen.blit(craigTheHelper, Rect(920,630,10,10))    #display the image of the helper
         else:
-            craigTheHelper = image.load("helper.png") #set the image for craig the helper (black eyes)
+            craigTheHelper = image.load("images/helper.png") #set the image for craig the helper (black eyes)
             screen.blit(craigTheHelper, Rect(920,630,10,10))    #display the image of the helper
         if instructionCheck == True:    #check if the instruction manual is true; if it is, 
             instructions() #call instructions for the user
